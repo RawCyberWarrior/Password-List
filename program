@@ -1,0 +1,14 @@
+import itertools
+
+def generate_passwords(keywords):
+    passwords = []
+    for r in range(1, len(keywords) + 1):
+        for combo in itertools.permutations(keywords, r):
+            passwords.append(''.join(combo))
+    return passwords
+
+if __name__ == "__main__":
+    keywords = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","l","k","z","x","c","v","b","n","m","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","l","k","z","x","c","v","b","n","m","1","2","3","4","5","6","7","8","9","0","1","2","3","4","5","6","7","8","9","0","`","`","-","-","=","=","[","]",";","'",",",".","/","[","]",";","'",",",".","/","!","~","!","@","#","$","%","^","&","*","(",")","_","+","{","}",":",""","<",">","?","~","!","@","#","$","%","^","&","*","(",")","_","+","{","}",":",""","<",">","?"]
+    password_list = generate_passwords(keywords)
+    for item in password_list:
+        print(item)
